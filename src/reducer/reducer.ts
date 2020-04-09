@@ -1,10 +1,10 @@
 import { actionTypes } from './actions';
 
-export default (state: any = {}, action: any) => {
+export default (state: any = { items: 'no-items' }, action: any) => {
   switch (action.type) {
     case actionTypes.GET: {
       return {
-        ...state
+        items: action.payload
       }
     }
     default: return state;
