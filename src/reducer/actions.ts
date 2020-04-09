@@ -1,14 +1,14 @@
-import { itemsRef } from "../firebase";
+import { textRef } from "../firebase";
 
 export const actionTypes = {
-  GET: 'GET'
+  FETCH_TEXT: 'FETCH_TEXT'
 };
 
 export const actions = {
-  fetchItems: () => (dispatch: Function) => {
-    itemsRef.on('value', snapshot => {
+  fetchText: () => (dispatch: Function) => {
+    textRef.on('value', snapshot => {
       dispatch({
-        type: actionTypes.GET,
+        type: actionTypes.FETCH_TEXT,
         payload: snapshot.val()
       });
     })

@@ -11,4 +11,4 @@ const config = {
 
 firebase.initializeApp(config);
 const databaseRef = firebase.database().ref();
-export const itemsRef = databaseRef.child("items");
+export const textRef = databaseRef.child("text");

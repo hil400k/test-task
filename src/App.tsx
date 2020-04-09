@@ -4,18 +4,20 @@ import { connect } from 'react-redux';
 import { actions } from './reducer/actions';
 
 function App(props: any) {
+  const { text } = props;
+
   useEffect(() => {
-    props.fetchItems();
-  }, [])
-    console.info(props.items);
+    props.fetchText();
+  }, []);
+
   return (
     <div className="App">
-
+      {text}
     </div>
   );
 }
 export default connect((appState: any) => ({
-  items: appState.global.items
+  text: appState.global.items
 }),{
-  fetchItems: actions.fetchItems
+  fetchText: actions.fetchText
 })(App);
