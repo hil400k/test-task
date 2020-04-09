@@ -1,0 +1,27 @@
+.auth-form {
+    display: block;
+    background: beige;
+    border-bottom: 2px solid #61dafb;
+    min-height: 200px;
+    width: 40%;
+    margin: 100px auto;
+}
+
+.auth-form label {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    padding: 20px;
+}
+
+.auth-form input {
+    width: 200px;
+}
+
+.auth-form input[type="submit"] {
+    margin-top: 40px;
+}
+
+.auth-form .caption {
+    flex: 1;
+}

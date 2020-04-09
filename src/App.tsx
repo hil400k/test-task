@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import { actions } from './reducer/actions';
+import Auth from "./components/auth";
 
 function App(props: any) {
   const { text } = props;
@@ -13,6 +14,7 @@ function App(props: any) {
   return (
     <div className="App">
       {text}
+      <Auth></Auth>
     </div>
   );
 }
