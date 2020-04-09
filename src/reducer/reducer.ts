@@ -1,8 +1,8 @@
-import * as actions from './actions';
+import { actionTypes } from './actions';
 
 export default (state: any = {}, action: any) => {
   switch (action.type) {
-    case actions.GET: {
+    case actionTypes.GET: {
       return {
         ...state
       }
