@@ -1,15 +1,16 @@
 .auth-form {
     display: block;
     background: beige;
-    border-bottom: 2px solid #61dafb;
+    border-bottom: 10px solid #509fb5;
     min-height: 200px;
     width: 40%;
+    max-width: 400px;
+    min-width: 380px;
     margin: 100px auto;
 }
 
 .auth-form label {
     display: flex;
-    flex-direction: row;
     align-content: space-between;
     padding: 20px;
 }
