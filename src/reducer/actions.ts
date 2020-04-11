@@ -37,7 +37,7 @@ export const actions = {
           })
         })
         .catch((err) => {
-          console.info(err, 'error');
+          alert((err && err.message) || 'Some error');
         })
   },
   logout: () => (dispatch: Function) => {
