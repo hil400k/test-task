@@ -9,6 +9,6 @@ const config = {
     appId: "1:984140393533:web:5efb2bceb29f89d30f4e54"
 }
 
-firebase.initializeApp(config);
+export const app = firebase.initializeApp(config);
 const databaseRef = firebase.database().ref();
 export const textRef = databaseRef.child("text");

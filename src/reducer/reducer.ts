@@ -9,7 +9,14 @@ export default (state: any = { }, action: IAction) => {
   switch (action.type) {
     case actionTypes.FETCH_TEXT: {
       return {
-        items: action.payload
+        ...state,
+        text: action.payload
+      };
+    }
+    case actionTypes.SET_USER: {
+      return {
+        ...state,
+        user: action.payload
       }
     }
     default: return state;

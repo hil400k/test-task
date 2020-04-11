@@ -10,18 +10,20 @@ import Settings from "./components/settings";
 interface IProps {
   text: string;
   fetchText(): void;
+  tryToAuth(): void;
+  user: {[key: string]: any}
 }
 
 function App(props: IProps) {
-  const { text } = props;
+  const { text, fetchText, tryToAuth, user } = props;
 
   useEffect(() => {
-    props.fetchText();
-  }, [])
+    tryToAuth();
+    fetchText();
+  }, []);
 
-  const routes = false ? (
+  const routes = user ? (
     <Switch>
-      <Route path="/auth" component={Auth}></Route>
       <Route path="/settings" component={Settings}></Route>
       <Route path="/" exact component={Dashboard}></Route>
       <Redirect to="/" />
@@ -43,7 +45,9 @@ function App(props: IProps) {
   );
 }
 export default connect((appState: any) => ({
-  text: appState.global.items
+  text: appState.global.text,
+  user: appState.global.user
 }),{
-  fetchText: actions.fetchText
+  fetchText: actions.fetchText,
+  tryToAuth: actions.tryToAuth
 })(App);
