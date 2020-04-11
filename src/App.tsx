@@ -25,7 +25,7 @@ function App(props: IProps) {
   const routes = user ? (
     <>
       <NavLink activeClassName="selected" className="nav-link" to="/settings">Settings</NavLink>
-      <NavLink activeClassName="selected" className="nav-link" to="/">Dashboard</NavLink>
+      <NavLink activeClassName="selected" exact className="nav-link" to="/">Dashboard</NavLink>
       <div className="content">
         <Switch>
           <Route path="/settings" component={Settings}></Route>

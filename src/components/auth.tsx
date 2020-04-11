@@ -19,7 +19,7 @@ const Auth = (props: IProps) => {
 
     return (
       <>
-        <h4>Auth</h4>
+        <h3>Login</h3>
         <form className="auth-form" onSubmit={submitted}>
             <label>
                 <span className="caption">Email:</span>
@@ -29,7 +29,7 @@ const Auth = (props: IProps) => {
                 <span className="caption">Password:</span>
                 <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
             </label>
-            <input type="submit" value="Submit" />
+            <input className="login" type="submit" value="Login" />
         </form>
       </>
     );

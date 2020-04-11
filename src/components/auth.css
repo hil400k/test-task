@@ -15,14 +15,29 @@
     padding: 20px;
 }
 
-.auth-form input {
+.auth-form input:not([type="submit"]) {
     width: 200px;
+    box-shadow: none;
+    border: 1px solid rgba(80, 159, 181, 0.31);
+    padding: 4px 8px;
 }
 
 .auth-form input[type="submit"] {
     margin-top: 40px;
+    width: 100px;
 }
 
 .auth-form .caption {
     flex: 1;
+}
+
+.auth-form .login {
+    display: inline-block;
+    border: none;
+    border-bottom: 4px solid #509fb5;
+    padding: 4px 8px;
+    color: beige;
+    font-size: 14px;
+    font-weight: bold;
+    background: rgba(0, 128, 128, 0.34);
 }

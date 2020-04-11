@@ -20,7 +20,7 @@
 
 .nav-link {
   display: inline-block;
-  background: teal;
+  background: rgba(0, 128, 128, 0.58);
   width: 100px;
   text-decoration: none;
   padding: 4px 8px;
@@ -29,6 +29,6 @@
   border-bottom: 4px solid rgb(20, 46, 57);
 }
 
-.nav-link .selected {
-  border-bottom: 4px solid rgb(224, 204, 92);
+.nav-link.selected {
+  background: teal;
 }
