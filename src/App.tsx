@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import { actions } from './reducer/actions';
@@ -15,9 +15,11 @@ interface IProps {
 
 function App(props: IProps) {
   const { tryToAuth, user, logout } = props;
+  const [authAtempt, setAuthAtempt] = useState(false);
 
   useEffect(() => {
     tryToAuth();
+    setAuthAtempt(true);
   }, []);
 
   const routes = user ? (
@@ -37,7 +39,7 @@ function App(props: IProps) {
     <div className="content">
       <Switch>
         <Route path="/auth" component={Auth}></Route>
-        <Redirect to="/auth" />
+        {authAtempt && <Redirect to="/auth" />}
       </Switch>
     </div>
   );

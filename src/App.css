@@ -28,3 +28,7 @@
   color: #fff;
   border-bottom: 4px solid rgb(20, 46, 57);
 }
+
+.nav-link .selected {
+  border-bottom: 4px solid rgb(224, 204, 92);
+}
