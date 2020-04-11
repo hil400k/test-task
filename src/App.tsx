@@ -11,11 +11,12 @@ interface IProps {
   text: string;
   fetchText(): void;
   tryToAuth(): void;
+  logout(): void;
   user: {[key: string]: any}
 }
 
 function App(props: IProps) {
-  const { text, fetchText, tryToAuth, user } = props;
+  const { text, fetchText, tryToAuth, user, logout } = props;
 
   useEffect(() => {
     tryToAuth();
@@ -23,11 +24,14 @@ function App(props: IProps) {
   }, []);
 
   const routes = user ? (
-    <Switch>
-      <Route path="/settings" component={Settings}></Route>
-      <Route path="/" exact component={Dashboard}></Route>
-      <Redirect to="/" />
-    </Switch>
+    <>
+      <Switch>
+        <Route path="/settings" component={Settings}></Route>
+        <Route path="/" exact component={Dashboard}></Route>
+        <Redirect to="/" />
+      </Switch>
+      <button className="logout" onClick={logout}>Logout</button>
+    </>
   ) : (
     <Switch>
       <Route path="/auth" component={Auth}></Route>
@@ -49,5 +53,6 @@ export default connect((appState: any) => ({
   user: appState.global.user
 }),{
   fetchText: actions.fetchText,
-  tryToAuth: actions.tryToAuth
+  tryToAuth: actions.tryToAuth,
+  logout: actions.logout
 })(App);

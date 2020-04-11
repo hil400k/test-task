@@ -3,6 +3,7 @@ import { app, textRef } from "../firebase";
 export const actionTypes = {
   FETCH_TEXT: 'FETCH_TEXT',
   SET_USER: 'SET_USER',
+  CLEAR_USER: 'CLEAR_USER'
 };
 
 export const actions = {
@@ -38,5 +39,11 @@ export const actions = {
         .catch((err) => {
           console.info(err, 'error');
         })
+  },
+  logout: () => (dispatch: Function) => {
+    localStorage.removeItem('auth');
+    dispatch({
+      type: actionTypes.CLEAR_USER,
+    });
   }
 };
