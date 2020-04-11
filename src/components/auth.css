@@ -1,7 +1,7 @@
 .auth-form {
     display: block;
     background: beige;
-    border-bottom: 10px solid #509fb5;
+    border-bottom: 4px solid #509fb5;
     min-height: 200px;
     width: 40%;
     max-width: 400px;
@@ -23,7 +23,7 @@
 }
 
 .auth-form input[type="submit"] {
-    margin-top: 40px;
+    margin-top: 20px;
     width: 100px;
 }
 
