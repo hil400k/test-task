@@ -24,24 +24,28 @@ function App(props: IProps) {
     <>
       <NavLink activeClassName="selected" className="nav-link" to="/settings">Settings</NavLink>
       <NavLink activeClassName="selected" className="nav-link" to="/">Dashboard</NavLink>
-      <Switch>
-        <Route path="/settings" component={Settings}></Route>
-        <Route path="/" exact component={Dashboard}></Route>
-        <Redirect to="/" />
-      </Switch>
+      <div className="content">
+        <Switch>
+          <Route path="/settings" component={Settings}></Route>
+          <Route path="/" exact component={Dashboard}></Route>
+          <Redirect to="/" />
+        </Switch>
+      </div>
       <button className="logout" onClick={logout}>Logout</button>
     </>
   ) : (
-    <Switch>
-      <Route path="/auth" component={Auth}></Route>
-      <Redirect to="/auth" />
-    </Switch>
+    <div className="content">
+      <Switch>
+        <Route path="/auth" component={Auth}></Route>
+        <Redirect to="/auth" />
+      </Switch>
+    </div>
   );
 
   return (
     <div className="App">
       <BrowserRouter>
-        {routes}
+          {routes}
       </BrowserRouter>
     </div>
   );
