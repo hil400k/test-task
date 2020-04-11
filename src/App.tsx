@@ -15,7 +15,7 @@ interface IProps {
 
 function App(props: IProps) {
   const { tryToAuth, user, logout } = props;
-  const [authAtempt, setAuthAtempt] = useState(false);
+  const [ authAtempt, setAuthAtempt ] = useState<boolean>(false);
 
   useEffect(() => {
     tryToAuth();

@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { connect } from "react-redux";
 import { actions } from "../reducer/actions";
+import { IAppState } from "../models";
 
 interface IProps {
-  text: string;
+  text?: string;
   fetchText(): void;
 }
 
@@ -22,7 +23,7 @@ const Dashboard = (props: IProps) => {
     );
 };
 
-export default connect((appState: any) => ({
+export default connect((appState: IAppState) => ({
   text: appState.global.text,
 }),{
   fetchText: actions.fetchText,

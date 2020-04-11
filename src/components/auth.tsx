@@ -35,8 +35,6 @@ const Auth = (props: IProps) => {
     );
 };
 
-export default connect((appState: any) => ({
-
-}),{
+export default connect(null,{
     login: actions.login
 })(Auth);
