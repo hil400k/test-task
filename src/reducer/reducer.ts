@@ -1,6 +1,11 @@
 import { actionTypes } from './actions';
 
-export default (state: any = { }, action: any) => {
+interface IAction {
+  type: string;
+  payload: any;
+}
+
+export default (state: any = { }, action: IAction) => {
   switch (action.type) {
     case actionTypes.FETCH_TEXT: {
       return {
