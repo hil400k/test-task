@@ -17,7 +17,7 @@ const Dashboard = (props: IProps) => {
     return (
         <div>
             <span>Dashboard</span>
-            <p>{text}</p>
+            <p>{text || '...'}</p>
         </div>
     );
 };
