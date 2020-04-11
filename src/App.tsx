@@ -6,11 +6,12 @@ import { BrowserRouter, Route, Switch, Redirect, NavLink } from 'react-router-do
 import Auth from "./components/auth";
 import Dashboard from "./components/dashboard";
 import Settings from "./components/settings";
+import { IAppState, IUser } from "./models";
 
 interface IProps {
   tryToAuth(): void;
   logout(): void;
-  user: {[key: string]: any}
+  user?: IUser
 }
 
 function App(props: IProps) {
@@ -52,7 +53,7 @@ function App(props: IProps) {
     </div>
   );
 }
-export default connect((appState: any) => ({
+export default connect((appState: IAppState) => ({
   user: appState.global.user
 }),{
   tryToAuth: actions.tryToAuth,
