@@ -2,29 +2,28 @@ import React, { useEffect } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import { actions } from './reducer/actions';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect, NavLink } from 'react-router-dom';
 import Auth from "./components/auth";
 import Dashboard from "./components/dashboard";
 import Settings from "./components/settings";
 
 interface IProps {
-  text: string;
-  fetchText(): void;
   tryToAuth(): void;
   logout(): void;
   user: {[key: string]: any}
 }
 
 function App(props: IProps) {
-  const { text, fetchText, tryToAuth, user, logout } = props;
+  const { tryToAuth, user, logout } = props;
 
   useEffect(() => {
     tryToAuth();
-    fetchText();
   }, []);
 
   const routes = user ? (
     <>
+      <NavLink activeClassName="selected" className="nav-link" to="/settings">Settings</NavLink>
+      <NavLink activeClassName="selected" className="nav-link" to="/">Dashboard</NavLink>
       <Switch>
         <Route path="/settings" component={Settings}></Route>
         <Route path="/" exact component={Dashboard}></Route>
@@ -41,7 +40,6 @@ function App(props: IProps) {
 
   return (
     <div className="App">
-      {text}
       <BrowserRouter>
         {routes}
       </BrowserRouter>
@@ -49,10 +47,8 @@ function App(props: IProps) {
   );
 }
 export default connect((appState: any) => ({
-  text: appState.global.text,
   user: appState.global.user
 }),{
-  fetchText: actions.fetchText,
   tryToAuth: actions.tryToAuth,
   logout: actions.logout
 })(App);

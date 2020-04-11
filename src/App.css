@@ -41,4 +41,19 @@
   position: fixed;
   right: 20px;
   top: 20px;
+  background: tomato;
+  border: none;
+  padding: 4px 8px;
+  color: #fff;
+  border-bottom: 4px solid rgba(57, 0, 13, 0.45);
+}
+
+.nav-link {
+  display: inline-block;
+  background: teal;
+  width: 100px;
+  text-decoration: none;
+  padding: 4px 8px;
+  margin: 4px;
+  color: #fff;
 }
